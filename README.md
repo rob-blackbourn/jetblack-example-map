@@ -6,7 +6,7 @@ Tiled maps represent the world as a collection of image files (or tiles) at diff
 At the farthest level the wolrd can be represented as a single image showing the whole world.
 As we zoom in one image becomes four, then sixteen, and so on until there are billions of images.
 At this level of detail we couldn't possible show all the tiles; in fact
-there are typically the same number of tiles displayed as we are just seeing
+there are typically the same number of tiles displayed at each zoom level as we are just seeing
 more detail.
 
 There are a number of libraries that provide this tiled map functionality;
