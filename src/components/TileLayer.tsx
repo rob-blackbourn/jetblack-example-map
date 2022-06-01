@@ -40,11 +40,14 @@ export default function TileLayer({ tileProvider = osm, dprs = [] }: TileLayerPr
 
   for (let x = min.x; x <= max.x; ++x) {
     for (let y = min.y; y <= max.y; ++y) {
+      // The range of tiles is from 0 to 2 ** zoom.
+      // When the space allows for more, wrap around.
       let tileX = x
       while (tileX < 0) {
         tileX += maxTiles
       }
       tileX %= maxTiles
+
       tiles.push({
         key: `${x}-${y}-${roundedZoom}`,
         url: tileProvider(tileX, y, roundedZoom),
