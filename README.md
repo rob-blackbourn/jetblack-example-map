@@ -43,7 +43,7 @@ known as a projection.
 
 These are the actual pixels on the screen, represented as a vertical and
 horizontal grid. There are a fixed number of dots in the horizontal and vertical direction.
-The points atart at zero at the top left and increase right and down.
+The points start at zero at the top left and increase right and down.
 
 #### Tile Points
 
@@ -52,7 +52,7 @@ the earth of a given latitude and longitude may be viewed from a range of
 distances (or zoom levels). the bigger the zoom, the closer and more detailed the image.
 
 Typically a tile is 256 pixels square. So an image of 1024 wide by 512 high
-would (in screen points) would comprise of 4 tiles across by 2 down.
+(in screen points) would comprise of 4 tiles across by 2 down.
 The coordinates in latitude and longitude this would depend on
 the zoom level.
 
