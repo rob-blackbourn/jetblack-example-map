@@ -1,7 +1,8 @@
 import { Coordinate, Point, TileProvider, TileInfo, ScaleInfo } from './types'
 import { boundValue } from './math'
 
-// https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames
+// These functions are provided by the Open Street Map wiki.
+// See: https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames
 
 const lng2tile = (lon: number, zoom: number): number => ((lon + 180) / 360) * Math.pow(2, zoom)
 
@@ -29,6 +30,8 @@ export const tile2LatLng = (tile: Point, zoom: number): Coordinate => ({
 })
 
 export function calcScaleInfo(zoom: number, width: number, height: number): ScaleInfo {
+  // The tiles are provided for discrete (integer) zoom values.
+  // We achieve smooth scrolling by scaling the image.
   const roundedZoom = Math.round(zoom)
   const zoomDiff = zoom - roundedZoom
 
