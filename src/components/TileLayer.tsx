@@ -25,8 +25,6 @@ export default function TileLayer({ tileProvider = osm, dprs = [] }: TileLayerPr
     height
   )
 
-  const tiles: Tile[] = []
-
   const maxTiles = 2 ** roundedZoom
 
   const min = {
@@ -38,6 +36,7 @@ export default function TileLayer({ tileProvider = osm, dprs = [] }: TileLayerPr
     y: Math.min(tileMax.y, maxTiles - 1),
   }
 
+  const tiles: Tile[] = []
   for (let x = min.x; x <= max.x; ++x) {
     for (let y = min.y; y <= max.y; ++y) {
       // The range of tiles is from 0 to 2 ** zoom.
@@ -61,6 +60,7 @@ export default function TileLayer({ tileProvider = osm, dprs = [] }: TileLayerPr
     }
   }
 
+  // Convert the top-left from tile coordinates to screen coordinates.
   const left = -((tileCenter.x - tileMin.x) * 256 - scaleWidth / 2)
   const top = -((tileCenter.y - tileMin.y) * 256 - scaleHeight / 2)
 
