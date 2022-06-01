@@ -35,8 +35,8 @@ This is how we identify a position on earth. Thinking of the planet as a ball,
 the coordinates describe two circles; one around the equator, and one around the poles. Longitude describes the ring around the equator, from -180 degrees to +180 degrees (i.e. 360 degrees in total). Latitude is an arc from the north to the south pole, from 90 to -90 degrees. The point at which these rings intersect is arbitrary, but by agreement is near the
 Greenwich Observatory in London England.
 
-Finally to represent the sphere of the earch on a two dimensional surface
-we need to streatch or compress the original spherical surface. This is
+To represent the sphere of the earth on a two dimensional surface
+we need to stretch or compress the original spherical surface. This is
 known as a projection.
 
 #### Screen Points
