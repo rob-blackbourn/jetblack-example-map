@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { DEFAULT_ZOOM } from './constants'
 import { boundValue } from './math'
 
-export interface ZoomProps {
+export interface useZoomWheelProps {
   defaultZoom?: number
   minZoom?: number
   maxZoom?: number
@@ -16,7 +16,7 @@ export default function useZoomWheel({
   maxZoom = 19,
   zoomStep = 0.1,
   ref,
-}: ZoomProps): [number, React.RefObject<number>, (zoom: number) => void] {
+}: useZoomWheelProps): [number, React.RefObject<number>, (zoom: number) => void] {
   const [zoom, _setZoom] = useState(defaultZoom)
   const zoomRef = useRef(zoom)
 

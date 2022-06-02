@@ -1,11 +1,11 @@
 import { Tile } from './types'
 
-export interface TileComponentProps {
+export interface ImageTileProps {
   tile: Tile
   tileLoaded?: () => void
 }
 
-export default function ImageTile({ tile, tileLoaded }: TileComponentProps) {
+export default function ImageTile({ tile, tileLoaded }: ImageTileProps) {
   return (
     <img
       className="jetblack-map-image-tile"

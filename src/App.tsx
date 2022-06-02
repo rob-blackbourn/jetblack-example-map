@@ -1,14 +1,26 @@
-import Map from './components/Map'
-import Marker from './components/Marker'
-import SVGPin from './components/SVGPin'
-import { GREENWICH_OBSERVATORY, EMPIRE_STATE_BUILDING } from './components/constants'
 import { useRef } from 'react'
-import TileLayer from './components/TileLayer'
-import OverlayLayer from './components/OverlayLayer'
-import useZoomWheel from './components/useZoomWheel'
-import useMouseEvents from './components/useMouseEvents'
-import { Coordinate, Point } from './components/types'
-import useClick from './components/useClick'
+import {
+  Coordinate,
+  Map,
+  Marker,
+  OverlayLayer,
+  Point,
+  SVGPin,
+  TileLayer,
+  useClick,
+  useMouseEvents,
+  useZoomWheel,
+} from './components'
+
+const GREENWICH_OBSERVATORY: Coordinate = {
+  latitude: 51.47684676353231,
+  longitude: -0.0005261695762532147,
+}
+
+const EMPIRE_STATE_BUILDING: Coordinate = {
+  latitude: 40.748585815569854,
+  longitude: -73.9856543574467,
+}
 
 export default function App() {
   const ref = useRef<HTMLDivElement>(null)
