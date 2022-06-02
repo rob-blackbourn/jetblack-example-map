@@ -84,23 +84,29 @@ export function srcSet(dprs: number[], tileProvider: TileProvider, x: number, y:
 }
 
 export function pointToCoordinate(
-  point: Point,
-  center: Coordinate,
+  screenPoint: Point,
+  projCenter: Coordinate,
   zoom: number,
   width: number,
   height: number
 ): Coordinate {
-  const pointDiff = {
-    x: (point.x - width / 2) / 256,
-    y: (point.y - height / 2) / 256,
+  // Calculate the distance from the screen center and convert to tile units.
+  const tileDelta = {
+    x: (screenPoint.x - width / 2) / 256,
+    y: (screenPoint.y - height / 2) / 256,
   }
 
-  const tile = latLng2Tile(center, zoom)
-  const adjTile = { x: tile.x + pointDiff.x, y: tile.y + pointDiff.y }
+  // Find the current center for the current zoom in tile units and add the delta.
+  const tileCenter = latLng2Tile(projCenter, zoom)
+  const newTileCenter = { x: tileCenter.x + tileDelta.x, y: tileCenter.y + tileDelta.y }
 
-  const coordinate = tile2LatLng(adjTile, zoom)
-  const latitude = boundValue(-90, coordinate.latitude, 90)
-  let longitude = coordinate.longitude
+  // Find the center in projection units for the given zoom level..
+  const newProjCenter = tile2LatLng(newTileCenter, zoom)
+
+  // Constrain the latitude between -90 and 90 degrees.
+  const latitude = boundValue(-90, newProjCenter.latitude, 90)
+
+  let longitude = newProjCenter.longitude
   while (longitude < -180) {
     longitude += 360
   }
@@ -115,23 +121,23 @@ export function pointToCoordinate(
 }
 
 export function pointToCoordinates(
-  point: Point,
+  screenPoint: Point,
   center: Coordinate,
   zoom: number,
   width: number,
   height: number
 ): Coordinate {
-  const pointDiff = {
-    x: (point.x - width / 2) / 256,
-    y: (point.y - height / 2) / 256,
+  const tileDelta = {
+    x: (screenPoint.x - width / 2) / 256,
+    y: (screenPoint.y - height / 2) / 256,
   }
 
   const tile = latLng2Tile(center, zoom)
-  const adjTile = { x: tile.x + pointDiff.x, y: tile.y + pointDiff.y }
+  const newTileCenter = { x: tile.x + tileDelta.x, y: tile.y + tileDelta.y }
 
-  const coordinate = tile2LatLng(adjTile, zoom)
-  const latitude = boundValue(-90, coordinate.latitude, 90)
-  let longitude = coordinate.longitude
+  const newProjCenter = tile2LatLng(newTileCenter, zoom)
+  const latitude = boundValue(-90, newProjCenter.latitude, 90)
+  let longitude = newProjCenter.longitude
   while (longitude < -180) {
     longitude += 360
   }
@@ -146,7 +152,7 @@ export function pointToCoordinates(
 }
 
 export function coordinateToPoint(
-  coord: Coordinate,
+  coordinate: Coordinate,
   center: Coordinate,
   zoom: number,
   width: number,
@@ -154,7 +160,7 @@ export function coordinateToPoint(
 ): Point {
   const tileCenter = latLng2Tile(center, zoom)
 
-  const tile = latLng2Tile(coord, zoom)
+  const tile = latLng2Tile(coordinate, zoom)
 
   return {
     x: (tile.x - tileCenter.x) * 256 + width / 2,
