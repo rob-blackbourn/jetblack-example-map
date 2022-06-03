@@ -10,7 +10,7 @@ import {
   useClick,
   useMouseEvents,
   useZoomWheel,
-} from './components'
+} from '@jetblack/map'
 
 const GREENWICH_OBSERVATORY: Coordinate = {
   latitude: 51.47684676353231,
