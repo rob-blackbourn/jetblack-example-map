@@ -102,6 +102,7 @@ export default function App() {
                 width: '25%',
                 padding: 0,
                 margin: 0,
+                textAlign: 'left',
               }}
             >
               {key}
@@ -112,6 +113,7 @@ export default function App() {
                 width: '75%',
                 padding: 0,
                 margin: 0,
+                textAlign: 'left',
               }}
             >
               {value}
