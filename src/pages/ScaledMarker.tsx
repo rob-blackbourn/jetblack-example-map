@@ -40,6 +40,8 @@ function ScaledMarker({ radius = 5, color = 'red' }: ScaledMarkerProps) {
   )
 }
 
+const tileSize = { width: 256, height: 256 }
+
 export default function CustomMarker() {
   const LONDON: Coordinate = {
     latitude: 51.54692324195448,
@@ -58,8 +60,7 @@ export default function CustomMarker() {
     ref,
     defaultCenter: LONDON,
     zoom,
-    tileWidth: 256,
-    tileHeight: 256,
+    tileSize,
   })
 
   return (

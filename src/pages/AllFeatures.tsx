@@ -28,6 +28,8 @@ const EMPIRE_STATE_BUILDING: Coordinate = {
   longitude: -73.9856543574467,
 }
 
+const tileSize = { width: 256, height: 256 }
+
 export default function AllFeatures() {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -36,16 +38,14 @@ export default function AllFeatures() {
     ref,
     defaultCenter: GREENWICH_OBSERVATORY,
     zoom,
-    tileWidth: 256,
-    tileHeight: 256,
+    tileSize,
   })
 
   useClick({
     ref,
     center,
     zoom,
-    tileWidth: 256,
-    tileHeight: 256,
+    tileSize,
     onClick: (coordinate: Coordinate, point: Point) => console.log('click', { coordinate, point }),
     onDoubleClick: (coordinate: Coordinate, point: Point) => {
       setCenter(coordinate)

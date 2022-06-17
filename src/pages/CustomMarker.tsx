@@ -43,6 +43,8 @@ export default function CustomMarker() {
     longitude: -0.14182556179982908,
   }
 
+  const tileSize = { width: 256, height: 256 }
+
   const ref = useRef<HTMLDivElement>(null)
 
   const [zoom, setZoom] = useZoom({ ref, defaultZoom: 6 })
@@ -50,8 +52,7 @@ export default function CustomMarker() {
     ref,
     defaultCenter: GREENWICH_OBSERVATORY,
     zoom,
-    tileWidth: 256,
-    tileHeight: 256,
+    tileSize,
   })
 
   return (
