@@ -61,7 +61,7 @@ export default function AllFeatures() {
       .then(data => setData(data))
   }, [])
 
-  const handleRequestFeatureStyle = (feature: Feature, state: FeatureState): SVGProps<SVGAElement> | null => {
+  const handleRequestFeatureStyle = (feature: Feature, state: FeatureState): SVGProps<SVGSVGElement> | null => {
     if (state.mouseOver) {
       return {
         fill: '#93c0d099',
