@@ -7,6 +7,7 @@ import CustomMarker from './pages/CustomMarker'
 import ScaledMarker from './pages/ScaledMarker'
 import Geolocation from './pages/Geolocation'
 import GeoJsonFeatures from './pages/GeoJsonFeatures'
+import ClusterMarkerExample from './pages/ClusterMarkerExample'
 
 export default function App() {
   return (
@@ -28,6 +29,8 @@ export default function App() {
             <Link to="/geolocation">Geolocation</Link>
             &nbsp;|&nbsp;
             <Link to="/geojson-features">GeoJSON Features</Link>
+            &nbsp;|&nbsp;
+            <Link to="/cluster-markers">Cluster Markers</Link>
           </nav>
         </div>
         <Routes>
@@ -38,6 +41,7 @@ export default function App() {
           <Route path="/scaled-marker" element={<ScaledMarker />} />
           <Route path="/geolocation" element={<Geolocation />} />
           <Route path="/geojson-features" element={<GeoJsonFeatures />} />
+          <Route path="/cluster-markers" element={<ClusterMarkerExample />} />
         </Routes>
       </BrowserRouter>
     </div>
