@@ -5,8 +5,6 @@ import { Feature } from 'geojson'
 import {
   AttributionLayer,
   Coordinate,
-  FeatureState,
-  GeoJSONLayer,
   Map,
   Marker,
   OverlayLayer,
@@ -17,6 +15,7 @@ import {
   useDrag,
   useZoom,
 } from '@jetblack/map'
+import { FeatureState, GeoJSONLayer } from '@jetblack/map-geojson'
 
 const GREENWICH_OBSERVATORY: Coordinate = {
   latitude: 51.47684676353231,

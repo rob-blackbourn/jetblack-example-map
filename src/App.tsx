@@ -6,6 +6,7 @@ import TileProvider from './pages/TileProviders'
 import CustomMarker from './pages/CustomMarker'
 import ScaledMarker from './pages/ScaledMarker'
 import Geolocation from './pages/Geolocation'
+import GeoJsonFeatures from './pages/GeoJsonFeatures'
 
 export default function App() {
   return (
@@ -25,6 +26,8 @@ export default function App() {
             <Link to="/scaled-marker">Scaled Marker</Link>
             &nbsp;|&nbsp;
             <Link to="/geolocation">Geolocation</Link>
+            &nbsp;|&nbsp;
+            <Link to="/geojson-features">GeoJSON Features</Link>
           </nav>
         </div>
         <Routes>
@@ -34,6 +37,7 @@ export default function App() {
           <Route path="/custom-marker" element={<CustomMarker />} />
           <Route path="/scaled-marker" element={<ScaledMarker />} />
           <Route path="/geolocation" element={<Geolocation />} />
+          <Route path="/geojson-features" element={<GeoJsonFeatures />} />
         </Routes>
       </BrowserRouter>
     </div>

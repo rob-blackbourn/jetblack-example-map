@@ -1,10 +1,12 @@
 {
   "name": "@jetblack/example-map",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "homepage": "https://rob-blackbourn.github.io/jetblack-example-map",
   "dependencies": {
-    "@jetblack/map": "^1.5.1",
+    "@jetblack/map": "^2.0.0",
+    "@jetblack/map-cluster-marker": "^2.0.0",
+    "@jetblack/map-geojson": "^2.0.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,8 +18,13 @@
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "supercluster": "^7.1.5",
     "typescript": "^4.7.2",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.8",
+    "gh-pages": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,9 +51,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/geojson": "^7946.0.8",
-    "gh-pages": "^4.0.0"
   }
 }
