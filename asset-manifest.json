@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/jetblack-example-map/static/js/main.2a1e4902.js",
+    "main.js": "/jetblack-example-map/static/js/main.4367ab66.js",
     "static/js/787.6231a7cd.chunk.js": "/jetblack-example-map/static/js/787.6231a7cd.chunk.js",
     "index.html": "/jetblack-example-map/index.html",
-    "main.2a1e4902.js.map": "/jetblack-example-map/static/js/main.2a1e4902.js.map",
+    "main.4367ab66.js.map": "/jetblack-example-map/static/js/main.4367ab66.js.map",
     "787.6231a7cd.chunk.js.map": "/jetblack-example-map/static/js/787.6231a7cd.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.2a1e4902.js"
+    "static/js/main.4367ab66.js"
   ]
 }
