@@ -75,7 +75,9 @@ export default function ClusterMarkerExample() {
         <ClusterMarker
           features={places.features as Feature<GeoPoint>[]}
           renderPoint={(point: Point) => <SVGPin point={point} color="red" />}
-          renderCluster={(point: Point, data: Node<Feature<GeoPoint>>) => <ClusterPin count={data.count()} />}
+          renderCluster={(point: Point, data: Node<Feature<GeoPoint>>) => (
+            <ClusterPin point={point} count={data.count()} />
+          )}
           getCoordinates={getCoordinates}
           makePoint={makePoint}
         />

@@ -1,11 +1,11 @@
 {
   "name": "@jetblack/example-map",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "private": true,
   "homepage": "https://rob-blackbourn.github.io/jetblack-example-map",
   "dependencies": {
     "@jetblack/map": "^2.0.0",
-    "@jetblack/map-cluster-marker": "^2.0.0",
+    "@jetblack/map-cluster-marker": "^2.1.0",
     "@jetblack/map-geojson": "^2.0.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
